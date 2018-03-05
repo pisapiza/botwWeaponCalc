@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+
+<style>
+
+body{background-color:#272727;
+	text-align:center;
+	color:#ffbf00;}
+
+h{text-shadow:1px 1px #a07a00;}
+	
+form{text-align:left;
+	float:left;}
+	
+#atkToDPS{background-color:#181818;
+	margin-left:25%;
+	margin-right;:25%;
+	width:50%;
+	padding:1%;}
+
+#atkDPSout{
+	width:50%;
+	height:100%;
+	float:right;
+	background-color:#363636;
+}
+	
+</style>
+
+<title>BotW weapon calc</title>
+<script>
+
+function atkDPSconvert(){
+	var originalATK = document.getElementById("originalATK").value;
+	var weaponType = document.getElementById("weaponType").selectedIndex;
+	
+	var originalATKdps;
+	var originalATKoh;
+	var originalATKth;
+	var originalATKsp;
+	var originalATKths;
+	
+	if(weaponType==0){
+		window.alert("Please Select a weapon type");
+		
+	}
+	if(weaponType==1){
+		originalATKdps = originalATK * 2.04
+		
+		originalATKoh = originalATKdps/2.04
+		originalATKth = originalATKdps/.82
+		originalATKsp = originalATKdps/2.42
+		originalATKths = originalATKdps/2.28
+		
+		document.getElementById("originalATKdps").innerHTML = Math.round(originalATKdps);
+		document.getElementById("originalATKoh").innerHTML = Math.round(originalATKoh);
+		document.getElementById("originalATKth").innerHTML = Math.round(originalATKth);	
+		document.getElementById("originalATKsp").innerHTML = Math.round(originalATKsp);	
+		document.getElementById("originalATKths").innerHTML = Math.round(originalATKth);
+	}
+	if(weaponType==2){
+		originalATKdps = originalATK * .82
+		
+		originalATKoh = originalATKdps/2.04
+		originalATKth = originalATKdps/.82
+		originalATKsp = originalATKdps/2.42
+		originalATKths = originalATKdps/2.28
+		
+		
+		document.getElementById("originalATKdps").innerHTML = Math.round(originalATKdps);
+		document.getElementById("originalATKoh").innerHTML = Math.round(originalATKoh);
+		document.getElementById("originalATKth").innerHTML = Math.round(originalATKth);	
+		document.getElementById("originalATKsp").innerHTML = Math.round(originalATKsp);	
+		document.getElementById("originalATKths").innerHTML = Math.round(originalATKth);
+	}
+	if(weaponType==3){
+		originalATKdps = originalATK * 2.42
+		
+		originalATKoh = originalATKdps/2.04
+		originalATKth = originalATKdps/.82
+		originalATKsp = originalATKdps/2.42
+		originalATKths = originalATKdps/2.28
+		
+		document.getElementById("originalATKdps").innerHTML = Math.round(originalATKdps);
+		document.getElementById("originalATKoh").innerHTML = Math.round(originalATKoh);
+		document.getElementById("originalATKth").innerHTML = Math.round(originalATKth);	
+		document.getElementById("originalATKsp").innerHTML = Math.round(originalATKsp);	
+		document.getElementById("originalATKths").innerHTML = Math.round(originalATKth);
+	}
+	if(weaponType==4){
+		originalATKdps = originalATK * 2.28
+		
+		originalATKoh = originalATKdps/2.04
+		originalATKth = originalATKdps/.82
+		originalATKsp = originalATKdps/2.42
+		originalATKths = originalATKdps/2.28
+		
+		document.getElementById("originalATKdps").innerHTML = Math.round(originalATKdps);
+		document.getElementById("originalATKoh").innerHTML = Math.round(originalATKoh);
+		document.getElementById("originalATKth").innerHTML = Math.round(originalATKth);	
+		document.getElementById("originalATKsp").innerHTML = Math.round(originalATKsp);	
+		document.getElementById("originalATKths").innerHTML = Math.round(originalATKths);	
+	}
+}
+
+</script>
+
+</head>
+<body>
+
+<h1>Weapon Comparison Calculator for<br><i>Legend of Zelda: Breath of the Wild</i></h1>
+
+<div id="atkToDPS">
+
+<h2>ATK --> DPS/Equivalent Weapons calculator</h2>
+
+<form> <!-- ATK to DPS to Equivalent -->
+ATK of weapon:<br>
+<input type=number id="originalATK">
+<br><br>
+<select name="weaponType" id="weaponType">
+
+	<option value="0">Weapon Type?</option>
+	<option value="1">One-handed</option>
+	<option value="2">Two-handed</option>
+	<option value="3">Spear</option>
+	<option value="4">Two-handed (spinning)</option>
+
+</select>
+<br><br>
+ Note: <br>don't press enter, click<br>
+<input type=button value="submit" onClick="atkDPSconvert()">
+</form>
+
+<div id="atkDPSout">
+
+<p>DPS: <span id="originalATKdps">-</span></p>
+<h4>Equivalent Weapons:</h4>
+<p>One-Handed: <span id="originalATKoh">-</span></p>
+<p>Two-Handed: <span id="originalATKth">-</span></p>
+<p>Spear: <span id="originalATKsp">-</span></p>
+<p>Two-Handed (spinning): <span id="originalATKths">-</span></p>
+
+
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+</body>
